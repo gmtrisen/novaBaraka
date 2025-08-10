@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Baraka Junior School</title>
+  <link rel="stylesheet" href="school.css">
+  <link rel="script" href="school.js">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <script src="https://kit.fontawesome.com/5d3d3d9c28.js" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+ 
+</head>
+<body>
+  <header>
+    <img src="schoollogo.png" alt="logo">
+    <h1>NOVA BARAKA JUNIOR SCHOOL</h1>
+    <p>Building Bright Futures for PP1 to Grade 3</p>
+    
+  </header>
+
+  <nav>
+    <ul>
+      <li><a onclick="showSection('home')">Home</a></li>
+      <li><a onclick="showSection('about')">About School</a></li>
+      <li><a onclick="showSection('programs')">Programs</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <button class="go-back" onclick="showSection('home')">Back to Home</button>
+
+    <section id="home" class="section active">
+      <div class="home-content">
+        <img src="classroom2.jpg" alt="Happy kids learning">
+        <h2>Welcome to Nova Baraka School</h2>
+        <p>We provide a nurturing and fun environment for young learners from PP1 to Grade 3. Our dedicated teachers focus on holistic development, fostering creativity, curiosity, and a love for learning.</p>
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>Play-based learning for early development.</li>
+          <li>Experienced and caring educators.</li>
+          <li>Safe and vibrant campus.</li>
+        </ul>
+      </div>
+   
+
+    <div class="gallery-header">
+       <div class="sg"> SCHOOL GALLERY </div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-images" id="galleryImages">
+            <div class="gallery-image"><img src="classroom1.jpg" alt="Image 1"><span class="eye-icon" onclick="openModal(this)"><i class="fa-solid fa-eye"></i></span></div>
+            <div class="gallery-image"><img src="classroom2.jpg" alt="Image 2"><span class="eye-icon" onclick="openModal(this)"><i class="fa-solid fa-eye"></i></span></div>
+            <div class="gallery-image"><img src="schoollogo.png" alt="Image 3"><span class="eye-icon" onclick="openModal(this)"><i class="fa-solid fa-eye"></i></span></div>
+            <div class="gallery-image"><img src="spic.avif" alt="Image 4"><span class="eye-icon" onclick="openModal(this)"></span><i class="fa-solid fa-eye"></i></div>
+        </div>
+        <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+    </div>
+    
+
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage">
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.getElementById("galleryImages");
+        const totalImages = document.querySelectorAll(".gallery-image").length;
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalImages - 1;
+            if (currentIndex >= totalImages) currentIndex = 0;
+            images.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function openModal(element) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            var img = element.previousElementSibling;
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    </section>
+
+    <section id="about" class="section">
+      <div class="about-content">
+        <h2>About Our School</h2>
+        <p>Founded in 2010, Sunshine Junior School is dedicated to providing quality education for young children. Our mission is to create a supportive community where every child thrives academically, socially, and emotionally.</p>
+        <h3>Our Values</h3>
+        <ul>
+          <li>Creativity: Encouraging imaginative thinking</li>
+          <li>Respect: Fostering kindness and inclusion</li>
+          <li>Excellence: Striving for the best in all we do</li>
+        </ul>
+        <div class="gallery">
+          <img src="https://via.placeholder.com/200?text=Classroom" alt="Classroom">
+          <img src="https://via.placeholder.com/200?text=Playground" alt="Playground">
+          <img src="https://via.placeholder.com/200?text=Art+Room" alt="Art Room">
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section">
+      <div class="programs-content">
+        <h2>Our Programs</h2>
+        <h3>PP1 & PP2 (Pre-Primary)</h3>
+        <p>Our pre-primary program introduces young learners to foundational skills through play-based activities, songs, and stories. Focus areas include early literacy, numeracy, and social skills.</p>
+        <h3>Grade 1 to Grade 3</h3>
+        <p>Our primary program builds on foundational skills with a curriculum that includes Math, English, Science, and Creative Arts. We emphasize critical thinking and hands-on learning.</p>
+        <h3>Extracurricular Activities</h3>
+        <ul>
+          <li>Music and Dance</li>
+          <li>Sports and Outdoor Play</li>
+          <li>Art and Craft Workshops</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact-content">
+        <h2>Contact Us</h2>
+        <br>
+        <p>We'd love to hear from you! Reach out with any questions or to schedule a visit.</p>
+        <br>
+        <p><strong>Email:</strong> info@sunshinejuniorschool.com</p>
+        
+<br>
+        <p><strong>Phone:</strong> <a href="tel:+254702105515">07 021 05515</a>  <i class="fa fa-phone"></i></p>
+        <br>
+        <p><strong>Address:</strong> 123 Sunshine Lane, Happy Town</p>
+        <br>
+        
+          <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h4>Get in touch  </h4>
+                
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="9aa6159e-c653-44c7-b2c7-52b4dd05be12">
+         <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+         <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+         <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
+         <button type="submit">Submit<img src="ifont.svg" alt=""></button>
+
+        </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <footer>
+    <p>&copy; 2025 Sunshine Junior School. All rights reserved.</p>
+  </footer> -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Nova Baraka Junior School is committed to nurturing young minds with a focus on holistic education from PP1 to Grade 3.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope"></i> info@novabaraka.com</p>
+         <p><a href="tel:+254702105515">07 021 05515</a>  <i class="fa fa-phone"></i></p>
+        <p><i class="fas fa-map-marker-alt"></i> 456 Learning Road, Nairobi</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Nova Baraka Junior School. All rights reserved. | Future in safe hands👨🏾‍🤝‍👨🏼</p>
+    </div>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+      const goBackButton = document.querySelector('.go-back');
+      goBackButton.style.display = sectionId === 'home' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
