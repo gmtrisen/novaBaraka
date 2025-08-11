@@ -6,11 +6,11 @@
     body {
       font-family: 'Poppins', Arial, sans-serif;
       line-height: 1.6;
-      background-color: #009688;
+      background-color: #183e4d;
       color: #333;
     }
     header {
-       background: linear-gradient(rgba(0,0,0,0.5),#009688),
+       background: linear-gradient(rgba(0,0,0,0.5),#285b56),
      url(spic.avif);
     background-size: cover;
     background-position: center;
@@ -44,6 +44,7 @@
     nav ul li {
       margin: 0 1.5rem;
     }
+    
     nav ul li a {
       color: goldenrod;
       text-decoration: none;
@@ -56,7 +57,7 @@
     nav ul li a:hover {
       background-color: #1b1209;
     }
-@media (max-width: 600px) {
+    @media (max-width: 600px) {
   nav {
     margin: 10px;
     padding: 5px;
@@ -77,6 +78,7 @@
     padding: 0.3rem 0.8rem;
   }
 }
+
     main {
       max-width: 1000px;
       margin: 2rem auto;
@@ -111,6 +113,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       margin-bottom: 2rem;
+      margin-top: 2rem;
     }
     .home-content img {
       width: 100%;
@@ -119,19 +122,75 @@
       border-radius: 10px;
       margin-bottom: 1rem;
     }
+    
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+             height: 200px; /* Increased height for full visibility */
+            object-fit: cover;
+        }
+
+        .product-card h5 {
+            font-size: 16px; /* Smaller font size */
+            padding: 10px 0;
+            color: rgb(124, 79, 163);
+            margin: 0; /* Remove default margin */
+            flex-grow: 0;
+        }
+.product-grid {
+        grid-template-columns: repeat(1, 1fr); /* 2 columns on small screens */
+        gap: 15px; /* Reduced gap */
+        padding: 0 10px;
+    }
+
+    .product-card img {
+        height: 250px; /* Smaller image height */
+    }
+
+    .product-card h3 {
+        font-size: 14px; /* Smaller font */
+        padding: 8px 0;
+    }
+
     .gallery {
-      display: grid;
+      display: column;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
+      margin: 10px;
+    
     }
    .sg{
-    color: black;
+    color: rgb(227, 224, 224);
     font-size: 20px;
+    
    }
     .gallery img {
       width: 100%;
-      height: 80px;
+      height: 130px;
       object-fit: cover;
       border-radius: 5px;
       cursor: pointer;
@@ -330,6 +389,7 @@
         padding-top: 10px;
         border-top: 1px solid #34495e;
         margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     /* Media query for small screens (e.g., mobile devices) */
@@ -467,6 +527,83 @@
     height: auto;
   }
 }
+.mt-8 text-center{
+  text-align: center;
+  border-radius: 10px;
+  
+}
+.location {
+  text-align: center;
+  margin: 20px;
+}
 
+.location-h {
+  text-align: center;
+  color: red;
+}
 
+.maplink {
+  color: blueviolet;
+}
 
+.maplink a {
+  text-decoration: none;
+  color: blueviolet;
+  transition: color 0.3s;
+}
+
+.maplink a:hover {
+  color: darkviolet;
+}
+
+/* Styles for small screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .location {
+    margin: 10px;
+  }
+
+  .location-h {
+    font-size: 1.2rem; /* Reduced from default (assuming h3 is ~1.5rem) */
+  }
+
+  .maplink a {
+    font-size: 0.9rem; /* Smaller text for links */
+    padding: 5px 10px; /* Adjusted padding for better touch targets */
+  }
+
+  .iframe iframe {
+    width: 100%; /* Ensure iframe is responsive */
+    height: 250px; /* Reduced height for smaller screens */
+    max-width: 100%; /* Prevent overflow */
+  }
+}
+@media (max-width: 600px) {
+  .care-section {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .care-title {
+    font-size: 1.8rem;
+  }
+
+  .care-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-title {
+    font-size: 1.5rem;
+  }
+
+  .care-benefits {
+    max-width: 100%;
+  }
+
+  .care-benefits li {
+    font-size: 1rem;
+    padding-left: 20px;
+    background-size: 10px;
+    margin-bottom: 8px;
+  }
+}
