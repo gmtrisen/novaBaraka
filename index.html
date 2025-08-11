@@ -13,7 +13,7 @@
  
 </head>
 <body>
-    <script>
+  <script>
     window.onload = function() {
             alert("Registration Ongoing");
         };
@@ -26,16 +26,17 @@
   </header>
 
   <nav>
-    <ul>
+    <ul><i class="fa-solid fa-star" class="iconstar"></i>
       <li><a onclick="showSection('home')">Home</a></li>
       <li><a onclick="showSection('about')">School</a></li>
       <li><a onclick="showSection('programs')">Programs</a></li>
       <li><a onclick="showSection('contact')">Contact</a></li>
+      <i class="fa-solid fa-star"></i>
     </ul>
   </nav>
 
   <main>
-
+   
 
     <section id="home" class="section active">
       <div class="home-content">
@@ -49,10 +50,12 @@
           <li>Safe and vibrant campus.</li>
         </ul>
       </div>
-   
+
+       
 
     <div class="gallery-header">
-       <div class="sg"> SCHOOL GALLERY </div>
+       <div class="sg"><i class="fa-solid fa-star"></i> SCHOOL GALLERY<i class="fa-solid fa-star"></i> <hr></div>
+       
     </div>
     <div class="gallery-container">
         <div class="gallery-images" id="galleryImages">
@@ -107,6 +110,36 @@
         }
     </script>
 
+   <div class="home-content">
+        <img src="spic.avif" alt="Happy kids learning">
+        <h2 class="care-title">Daycare & Nightcare: Where Little Stars Thrive</h2>
+  <p class="care-description">At Nova Baraka Junior School, we offer a warm, nurturing, and imaginative haven for your little ones aged 2-3, as well as PP1, PP2, and Grades 1-3. Our dedicated caregivers and educators craft a safe, fun-filled environment that sparks creativity, curiosity, and a lifelong love for learning—day or night!</p>
+  <h3 class="why-choose-title">Why Trust Us with Your Child’s Care?</h3>
+  <ul class="care-benefits">
+    <li><strong>Tailored Daycare Fun:</strong> Playful, age-appropriate activities for 2-3-year-olds to explore and grow.</li>
+    <li><strong>Peaceful Nightcare Haven:</strong> Safe, restful overnight care with soothing routines for preschoolers and early graders.</li>
+    <li><strong>Expert Educators:</strong> Loving, trained staff dedicated to PP1, PP2, and Grades 1-3 development.</li>
+    <li><strong>Secure & Joyful Campus:</strong> A vibrant, child-friendly space designed for all-day safety and happiness.</li>
+  </ul>
+
+        <div class="location">
+      <h3 class="location-h">Location</h3>
+      <div class="maplink">
+     <a href="https://www.google.com/maps/place/-1.17115° S, 36.8270° E" target="_blank" class="maplink">
+  Open Our Location on Google Maps
+</a> </div>
+
+      <!-- Optional Embedded Map -->
+      <div class="iframe">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3428.1441888564304!2d37.05593980950927!3d-1.0771778228428963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMDQnMzguNCJTIDM3wrAwMycyOC4zIkU!5e1!3m2!1sen!2ske!4v1754929318719!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+       referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+      </div>
+    
+       <!-- Location Section -->
+    
+  
     </section>
 
     <section id="about" class="section">
@@ -119,12 +152,24 @@
           <li>Respect: Fostering kindness and inclusion</li>
           <li>Excellence: Striving for the best in all we do</li>
         </ul>
-        <div class="gallery">
-          <img src="https://via.placeholder.com/200?text=Classroom" alt="Classroom">
-          <img src="https://via.placeholder.com/200?text=Playground" alt="Playground">
-          <img src="https://via.placeholder.com/200?text=Art+Room" alt="Art Room">
+       <div class="product-grid">
+            <div class="product-card">
+                <img src="spic.avif" alt="Charger">
+                <h5>Classroom</h5>
+            </div>
+            <div class="product-card">
+                <img src="spic.avif" alt="Phone Case">
+                <h5>Playground</h5>
+            </div>
+            <div class="product-card">
+                <img src="spic.avif" alt="Powerbank">
+                <h5>Art Room</h5>
+            </div>
+            <div class="product-card">
+                <img src="spic.avif" alt="Earpods">
+                <h5>Kitchen</h5>
+            </div>
         </div>
-      </div>
     </section>
 
     <section id="programs" class="section">
@@ -189,7 +234,7 @@
         <h3>Contact</h3>
         <p><i class="fas fa-envelope"></i> info@novabaraka.com</p>
          <p><a href="tel:+254702105515">07 021 05515</a>  <i class="fa fa-phone"></i></p>
-        <p><i class="fas fa-map-marker-alt"></i> 456 Learning Road, Nairobi</p>
+        <p><i class="fas fa-map-marker-alt"></i>Witeithie, Juja <br>Kifute area<br>Opposite Kafufe flats</p>
       </div>
       <div class="footer-section">
         <h3>Follow Us</h3>
@@ -197,7 +242,7 @@
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        </div> 
       </div>
     </div>
     <div class="footer-bottom">
@@ -216,7 +261,4 @@
     }
   </script>
 </body>
-
 </html>
-
-
