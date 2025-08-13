@@ -26,12 +26,12 @@
   </header>
 
   <nav>
-    <ul>
+    <ul><i class="fa-solid fa-star" class="iconstar"></i>
       <li><a onclick="showSection('home')">Home</a></li>
       <li><a onclick="showSection('about')">School</a></li>
       <li><a onclick="showSection('programs')">Programs</a></li>
       <li><a onclick="showSection('contact')">Contact</a></li>
-      
+      <i class="fa-solid fa-star"></i>
     </ul>
   </nav>
 
@@ -42,7 +42,8 @@
       <div class="home-content">
         <img src="classroom2.jpg" alt="Happy kids learning">
         <h2>Welcome to Nova Baraka School</h2>
-        <p>We provide a nurturing and fun environment for young learners from PP1 to Grade 3. Our dedicated teachers focus on holistic development, fostering creativity, curiosity, and a love for learning.</p>
+        <p>We provide a nurturing and fun environment for young learners from PP1 to Grade 3. Our dedicated teachers focus on holistic development, fostering creativity, curiosity, and a love for learning.<br>
+        Home of inclusivity.💎<p>
         <h3>Why Choose Us?</h3>
         <ul>
           <li>Play-based learning for early development.</li>
@@ -123,7 +124,7 @@
   </ul>
 
         <div class="location">
-      <h3 class="location-h">Location</h3>
+      <h3 class="location-h"><i class="fas fa-map-marker-alt"></i>Location</h3>
       <div class="maplink">
      <a href="https://www.google.com/maps/place/-1.17115° S, 36.8270° E" target="_blank" class="maplink">
   Open Our Location on Google Maps
@@ -145,7 +146,7 @@
     <section id="about" class="section">
       <div class="about-content">
         <h2>About Our School</h2>
-        <p>Founded in 2010, Sunshine Junior School is dedicated to providing quality education for young children. Our mission is to create a supportive community where every child thrives academically, socially, and emotionally.</p>
+        <p>Founded in 2025, our school bursts onto the educational scene as a vibrant hub of innovation and inspiration. With a bold vision to shape the future, we blend cutting-edge learning with a nurturing environment, sparking curiosity and empowering every student to carve their own path to greatness.</p>
         <h3>Our Values</h3>
         <ul>
           <li>Creativity: Encouraging imaginative thinking</li>
@@ -185,7 +186,90 @@
           <li>Sports and Outdoor Play</li>
           <li>Art and Craft Workshops</li>
         </ul>
+      
+         <div class="pdf-section">
+        <h2>Fees Structure</h2>
+        <p>Click the button below to view or download the fees structure document.</p>
+        <a href="1425_JavaScript-from-Beginner-to-Professional.pdf" target="_blank" download class="pdf-button">View/Download Fees Structure</a>
+         </div>
+
+        <!-- Event Calendar -->
+    <div class="eventcalendar ">
+      <h2 class="events">Event Calendar</h2>
+      <div class=text-center">
+        <label for="audience-filter" class="sr-only">Filter by audience</label>
+        <select id="audience-filter" class="filterevents " aria-label="Filter events by audience">
+          <option value="All">All Audiences</option>
+          <option value="Parents">Parents</option>
+          <option value="Students">Students</option>
+        </select>
       </div>
+      <div id="event-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Events will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Event Calendar JavaScript
+    const events = [
+      {
+        date: "2025-09-01",
+        title: "First Day of School",
+        audience: "All",
+        description: "Join us to kick off the 2025 school year!",
+        googleCal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=First+Day+of+School&dates=20250901T090000Z/20250901T150000Z&details=Join+us+to+kick+off+the+2025+school+year!&location=Nova+Baraka+Junior+School",
+        iCal: "data:text/calendar;charset=utf8,BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nURL:http://novabaraka.com\nDTSTART:20250901T090000Z\nDTEND:20250901T150000Z\nSUMMARY:First Day of School\nDESCRIPTION:Join us to kick off the 2025 school year!\nLOCATION:Nova Baraka Junior School\nEND:VEVENT\nEND:VCALENDAR"
+      },
+      {
+        date: "2025-10-15",
+        title: "Parent-Teacher Meeting",
+        audience: "Parents",
+        description: "Discuss your child's progress with our teachers.",
+        googleCal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Parent-Teacher+Meeting&dates=20251015T160000Z/20251015T180000Z&details=Discuss+your+child%27s+progress+with+our+teachers.&location=Nova+Baraka+Junior+School",
+        iCal: "data:text/calendar;charset=utf8,BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nURL:http://novabaraka.com\nDTSTART:20251015T160000Z\nDTEND:20251015T180000Z\nSUMMARY:Parent-Teacher Meeting\nDESCRIPTION:Discuss your child's progress with our teachers.\nLOCATION:Nova Baraka Junior School\nEND:VEVENT\nEND:VCALENDAR"
+      },
+      {
+        date: "2025-11-20",
+        title: "Sports Day",
+        audience: "Students",
+        description: "A fun day of sports and outdoor activities!",
+        googleCal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sports+Day&dates=20251120T080000Z/20251120T140000Z&details=A+fun+day+of+sports+and+outdoor+activities!&location=Nova+Baraka+Junior+School",
+        iCal: "data:text/calendar;charset=utf8,BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nURL:http://novabaraka.com\nDTSTART:20251120T080000Z\nDTEND:20251120T140000Z\nSUMMARY:Sports Day\nDESCRIPTION:A fun day of sports and outdoor activities!\nLOCATION:Nova Baraka Junior School\nEND:VEVENT\nEND:VCALENDAR"
+      }
+    ];
+
+    function renderEvents(filter = "All") {
+      const eventList = document.getElementById("event-list");
+      eventList.innerHTML = "";
+      const filteredEvents = filter === "All" ? events : events.filter(event => event.audience === filter);
+
+      filteredEvents.forEach(event => {
+        const eventCard = document.createElement("div");
+        eventCard.className = "bg-white p-4 rounded-lg shadow-md hover-scale";
+        eventCard.innerHTML = `
+          <p class="font-semibold text-blue-900">${event.date}</p>
+          <p class="text-lg font-medium">${event.title}</p>
+          <p class="text-sm text-gray-600">Audience: ${event.audience}</p>
+          <p class="text-sm text-gray-600 mb-2">${event.description}</p>
+          <div class="flex space-x-2">
+            <a href="${event.googleCal}" target="_blank" class="text-blue-500 hover:underline" aria-label="Add ${event.title} to Google Calendar">Add to Google Calendar</a>
+            <a href="${event.iCal}" download="event.ics" class="text-blue-500 hover:underline" aria-label="Download ${event.title} iCal">Download iCal</a>
+          </div>
+        `;
+        eventList.appendChild(eventCard);
+      });
+    }
+
+    // Initial render
+    renderEvents();
+
+    // Filter events on audience change
+    document.getElementById("audience-filter").addEventListener("change", (e) => {
+      renderEvents(e.target.value);
+    });
+  </script>
+  </div>
     </section>
 
     <section id="contact" class="section">
@@ -194,12 +278,12 @@
         <br>
         <p>We'd love to hear from you! Reach out with any questions or to schedule a visit.</p>
         <br>
-        <p><strong>Email:</strong> info@sunshinejuniorschool.com</p>
+        <p><strong>Email:</strong> info@novabarakajuniorschool.com</p>
         
 <br>
         <p><strong>Phone:</strong> <a href="tel:+254702105515">07 021 05515</a>  <i class="fa fa-phone"></i></p>
         <br>
-        <p><strong>Address:</strong> 123 Sunshine Lane, Happy Town</p>
+        <p><strong>Address:</strong> Witeithie, Juja <br>Kibute area, Opposite Kafufe flats</p>
         <br>
         
           <div class="contact-container">
@@ -234,7 +318,7 @@
         <h3>Contact</h3>
         <p><i class="fas fa-envelope"></i> info@novabaraka.com</p>
          <p><a href="tel:+254702105515">07 021 05515</a>  <i class="fa fa-phone"></i></p>
-        <p><i class="fas fa-map-marker-alt"></i>Witeithie, Juja <br>Kifute area<br>Opposite Kafufe flats</p>
+        <p><i class="fas fa-map-marker-alt"></i>Witeithie, Juja <br>Kibute area<br>Opposite Kafufe flats</p>
       </div>
       <div class="footer-section">
         <h3>Follow Us</h3>
@@ -262,4 +346,3 @@
   </script>
 </body>
 </html>
-
